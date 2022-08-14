@@ -2,30 +2,45 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h1>New Campground</h1>
-            <form action="/campgrounds" method="POST" class="mb-3">
+            <form action="/campgrounds" method="POST" class="needs-validation" novalidate>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="title">title:</label>
-                    <input class="form-control" type="text" name="campground[title]" id="title">
+                    <input class="form-control" type="text" name="campground[title]" id="title" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="price">price:</label>
                     <div class="input-group">
                         <span class="input-group-text">$</span>
-                        <input  class="form-control" type="text" name="campground[price]" id="price">
+                        <input  class="form-control" type="text" name="campground[price]" id="price" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                         <span class="input-group-text">.00</span>
                     </div>
                 </div> 
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="image">image url:</label>
-                    <input class="form-control" type="text" name="campground[image]" id="image">
+                    <input class="form-control" type="text" name="campground[image]" id="image" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="description">description:</label>
-                    <textarea class="form-control" type="text" name="campground[description]" id="description"></textarea>
+                    <textarea class="form-control" type="text" name="campground[description]" id="description" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="location">location:</label>
-                    <input class="form-control" type="text" name="campground[location]" id="location">
+                    <input class="form-control" type="text" name="campground[location]" id="location" required> 
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
                 <div class="mb-5">
                     <button type="submit" class="btn btn-success text-capitalize">submit</button>
