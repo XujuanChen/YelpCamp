@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h1>Edit Campground</h1>
-            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" class="mb-3">
+            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" class="mb-3 needs-validation" novalidate>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="title">title</label>
                     <input class="form-control" type="text" name="campground[title]" id="title"
-                        value="<%= campground.title %> ">
+                        value="<%= campground.title %> " required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="price">price:</label>
@@ -19,16 +19,16 @@
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="image">image url:</label>
                     <input class="form-control" type="text" name="campground[image]" id="image"
-                        value="<%= campground.image %> ">
+                        value="<%= campground.image %> " required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="description">description</label>
-                    <textarea class="form-control" type="text" name="campground[description]" id="description" value="<%= campground.description %>"><%= campground.description %></textarea>
+                    <textarea class="form-control" type="text" name="campground[description]" id="description" value="<%= campground.description %>" required><%= campground.description %></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-capitalize" for="location">location</label>
                     <input class="form-control" type="text" name="campground[location]" id="location"
-                        value="<%= campground.location%> ">
+                        value="<%= campground.location%> " required>
                 </div>
                 <div class="mb-5 d-flex">
                     <button type="submit" class="btn btn-success text-capitalize">Update Campground</button>
