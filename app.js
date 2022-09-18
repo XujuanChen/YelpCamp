@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
@@ -10,10 +10,14 @@ const ExpressError = require('./utils/ExpressError');
 const catchAsync = require('./utils/catchAsync');
 const Campground = require('./models/campground');
 const Review = require('./models/review');
+// const dbUrl = process.env.DB_URL;
+const dbUrl = "mongodb+srv://our-first-user:our-first-user@rest.1bp4pim.mongodb.net/?retryWrites=true&w=majority"
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp');
+// mongoose.connect('mongodb://localhost:27017/yelp-camp');
+
+mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
