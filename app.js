@@ -10,8 +10,9 @@ const ExpressError = require('./utils/ExpressError');
 const catchAsync = require('./utils/catchAsync');
 const Campground = require('./models/campground');
 const Review = require('./models/review');
-// const dbUrl = process.env.DB_URL;
-const dbUrl = "mongodb+srv://our-first-user:our-first-user@rest.1bp4pim.mongodb.net/?retryWrites=true&w=majority"
+
+require('dotenv').config({path: __dirname + '/.env'})
+const dbUrl = process.env.DB_URL;
 
 const mongoose = require('mongoose');
 
