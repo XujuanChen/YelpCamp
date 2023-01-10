@@ -30,7 +30,9 @@ const seedDB = async() => {
     }
 }
 
-seedDB();
+seedDB().then(()=>{
+    mongoose.connection.close();
+});
 
 // run code to excute and save on db: 
 // node seeds/index,js 
